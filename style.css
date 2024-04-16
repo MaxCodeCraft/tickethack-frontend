@@ -96,21 +96,43 @@ input {
 #results {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   background-color: white;
   border-radius: 20px;
   width: 350px;
   overflow-y: auto;
-  /* display: flex; */
+  padding: 1rem;
 }
 
 #results img {
   width: 10rem;
   border-bottom: 2px solid #8dd194;
   padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-#results p {
+/* #results p {
   margin-bottom: 5rem;
+} */
+
+.trip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(232, 213, 216);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.btn-book {
+  background-color: #4caf50;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
 }
