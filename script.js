@@ -24,6 +24,7 @@ function searchTrip(departure, arrival, date) {
     .then((response) => response.json())
     .then((data) => {
       if (data.results.length === 0) {
+        // Affiche une image et un text lorsqu'il n'y a pas de résultat de la recherche
         document.querySelector("#results").innerHTML = `
          <img id="results-img" src="./assets/notfound.png" alt="trip not found" />
          <p>No Trip found.</p>`;
@@ -40,9 +41,26 @@ function searchTrip(departure, arrival, date) {
             <p class="price">${data.results[i].price}€</p>
             <button class="btn-book" type="button">Book</button>
           </div>`;
-          // document
-          //   .querySelector(".book")
-          //   .addEventListener("click", function () {});
+        }
+        const tripResults = document.querySelectorAll(".btn-book");
+        for (let i = 0; i < tripResults.length; i++) {
+          tripResults[i].addEventListener("click", function () {
+            const newTrip = {
+              departure: document.querySelectorAll(".departure")[i].textContent,
+              arrival: document.querySelectorAll(".arrival")[i].textContent,
+              hour: document.querySelectorAll(".hour")[i].textContent,
+              price: document
+                .querySelectorAll(".price")
+                [i].textContent.split("€")[0],
+            };
+            fetch("http://localhost:3000/carts/add", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(newTrip),
+            })
+              .then((response) => response.json())
+              .then((data) => console.log(data));
+          });
         }
       }
     });
@@ -53,11 +71,3 @@ function searchTrip(departure, arrival, date) {
 document.querySelector("#results").innerHTML = `
         <img id="results-img" src="./assets/train.png" alt="train" />
         <p>It's time to book your future trip.</p>`;
-
-// Affiche une image et un text lorsqu'il n'y a pas de résultat de la recherche
-//
-// function tripNotFound() {
-//   document.querySelector("#results").innerHTML = `
-//         <img id="results-img" src="./assets/notfound.png" alt="trip not found" />
-//         <p>No Trip found.</p>`;
-// }
