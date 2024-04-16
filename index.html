@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Work+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Tickethack - Live your dreams</title>
   </head>
   <body>
     <div id="header">
-      <a href=""><h4>Tickethack</h4></a>
-      <div>
+      <a href=""><h1>Tickethack</h1></a>
+      <div class="menu">
         <a href=""><h6>Cart</h6></a>
         <a href=""><h6>Bookings</h6></a>
       </div>
     </div>
     <div id="corps">
       <div id="text">
-        <h1>Explore the world effortlessly by train!</h1>
+        <h2>Explore the world effortlessly by train!</h2>
         <p>
           Compare, book and enjoy cheap prices for train tickets: your journey
           starts on Tickethack.
@@ -39,35 +45,7 @@
           />
           <button id="btn-search" type="button">Search</button>
         </div>
-        <div id="results">
-          <div class="trip">
-            <p>
-              <span class="departure">Paris </span> >
-              <span class="arrival">Lyon </span>
-            </p>
-            <p class="hour">18:48</p>
-            <p class="price">53€</p>
-            <button class="btn-book" type="button">Book</button>
-          </div>
-          <div class="trip">
-            <p>
-              <span class="departure">Paris </span> >
-              <span class="arrival">Lyon </span>
-            </p>
-            <p class="hour">18:48</p>
-            <p class="price">53€</p>
-            <button class="btn-book" type="button">Book</button>
-          </div>
-          <div class="trip">
-            <p>
-              <span class="departure">Paris </span> >
-              <span class="arrival">Lyon </span>
-            </p>
-            <p class="hour">18:48</p>
-            <p class="price">53€</p>
-            <button class="btn-book" type="button">Book</button>
-          </div>
-        </div>
+        <div id="results"></div>
       </div>
     </div>
     <script src="./script.js"></script>

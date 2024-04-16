@@ -21,6 +21,26 @@ body {
   align-items: center;
   height: 3rem;
   width: 100%;
+  font-family: "Noto Sans KR";
+}
+
+.menu {
+  padding-right: 2rem;
+}
+
+h1 {
+  color: #4caf50;
+  padding-left: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: "Noto Sans KR";
+}
+
+#text p {
+  font-family: "Work Sans";
+  font-size: 1rem;
 }
 
 #header div {
@@ -49,6 +69,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 10%;
+  flex-wrap: wrap;
 }
 
 #search {
@@ -59,7 +80,7 @@ a {
   flex-direction: column;
   justify-content: space-around;
   padding: 1em;
-  height: 25em;
+  height: 400px;
 }
 
 input {
@@ -67,6 +88,8 @@ input {
   border: none;
   padding: 0.5em;
   background-color: #ece9e9;
+  font-family: "Work Sans";
+  color: black;
 }
 
 #departure {
@@ -101,8 +124,9 @@ input {
   background-color: white;
   border-radius: 20px;
   width: 350px;
-  overflow-y: auto;
+  overflow: auto;
   padding: 1rem;
+  height: 400px;
 }
 
 #results img {
@@ -135,4 +159,12 @@ input {
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.price {
+  font-size: large;
 }

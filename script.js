@@ -23,13 +23,27 @@ function searchTrip(departure, arrival, date) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.results.length);
       if (data.results.length === 0) {
         document.querySelector("#results").innerHTML = `
          <img id="results-img" src="./assets/notfound.png" alt="trip not found" />
          <p>No Trip found.</p>`;
       } else {
-        console.log(data);
+        document.querySelector("#results").innerHTML = ``;
+        for (let i = 0; i < data.results.length; i++) {
+          document.querySelector("#results").innerHTML += `
+          <div class="trip">
+            <p>
+              <span class="departure">${data.results[i].departure}</span> >
+              <span class="arrival">${data.results[i].arrival}</span>
+            </p>
+            <p class="hour">${data.results[i].date.slice(11, 16)}</p>
+            <p class="price">${data.results[i].price}€</p>
+            <button class="btn-book" type="button">Book</button>
+          </div>`;
+          // document
+          //   .querySelector(".book")
+          //   .addEventListener("click", function () {});
+        }
       }
     });
 }
