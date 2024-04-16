@@ -22,14 +22,23 @@ function searchTrip(departure, arrival, date) {
     body: JSON.stringify(searchRequest),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      console.log(data.results.length);
+      if (data.results.length === 0) {
+        document.querySelector("#results").innerHTML = `
+         <img id="results-img" src="./assets/notfound.png" alt="trip not found" />
+         <p>No Trip found.</p>`;
+      } else {
+        console.log(data);
+      }
+    });
 }
 
 // Affiche l'image et le texte de base dans l'ID results
-//
-// document.querySelector("#results").innerHTML = `
-//         <img id="results-img" src="./assets/train.png" alt="train" />
-//         <p>It's time to book your future trip.</p>`;
+
+document.querySelector("#results").innerHTML = `
+        <img id="results-img" src="./assets/train.png" alt="train" />
+        <p>It's time to book your future trip.</p>`;
 
 // Affiche une image et un text lorsqu'il n'y a pas de résultat de la recherche
 //
