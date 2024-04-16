@@ -7,6 +7,39 @@
     <title>Tickethack - Live your dreams</title>
   </head>
   <body>
+    <div id="header">
+      <a href=""><h4>Tickethack</h4></a>
+      <div>
+        <a href=""><h6>Cart</h6></a>
+        <a href=""><h6>Bookings</h6></a>
+      </div>
+    </div>
+    <div id="text">
+      <h1>Explore the world effortlessly by train!</h1>
+      <h5>
+        Compare, book and enjoy cheap prices for train tickets: your journey
+        starts on Tickethack.
+      </h5>
+    </div>
+    <div id="container">
+      <div id="search">
+        <input id="departure" type="text" placeholder="Departure" />
+        <input id="arrival" type="text" placeholder="Arrival" />
+        <input
+          type="date"
+          id="trip-date"
+          name="trip-date"
+          value="2024-04-16"
+          min="2024-01-01"
+          max="2030-12-31"
+        />
+        <button id="btn-search" type="button">Search</button>
+      </div>
+      <div id="results">
+        <img id="results-img" src="assets/train.png" alt="train" />
+        <p>It's time to book your future trip.</p>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
