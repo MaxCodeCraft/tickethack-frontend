@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+#blank {
+  background-image: none;
+}
 body {
   background-image: url("assets/background.jpg");
   background-position: center;
@@ -11,7 +13,7 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #header {
@@ -167,4 +169,68 @@ button:hover {
 
 .price {
   font-size: large;
+}
+
+#cart-container {
+  background-color: #d4dcdc;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#my-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 1rem;
+  width: 70%;
+  height: 25%;
+}
+
+#btn-delete {
+  background-color: #4caf50;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  padding: 1px;
+}
+
+.cart {
+  padding-top: 1.5rem;
+}
+
+.cart-line {
+  width: 80%;
+}
+
+#total {
+  background-color: rgb(31, 31, 196);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 100%;
+  height: 4rem;
+  padding: 2rem;
+}
+
+#btn-purchase {
+  background-color: #4caf50;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.text {
+  color: white;
 }
