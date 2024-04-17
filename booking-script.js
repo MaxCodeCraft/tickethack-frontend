@@ -2,35 +2,38 @@ function showBookings() {
   fetch("http://localhost:3000/bookings/")
     .then((r) => r.json())
     .then((data) => {
-      if (data.cartData.length != 0) {
-        document.querySelector("#my-cart").innerHTML = `
+      if (data.bookingData.length != 0) {
+        document.querySelector("#my-booking").innerHTML = `
           <div>
-            <p class="cart">My cart</p>
+            <p class="booking">My bookings</p>
           </div>
-          <div id="cart-line-box"></div>
-          <div id="total">
-            <p class="text">Total : <span class="cart-total-price">0</span>€</p>
-            <button id="btn-purchase" type="button">Purchase</button>
-          </div>`;
+          <div id="booking-line-box"></div>
+          <span class="border"></span>
+          <p class="enjoy">Enjoy your travels with Tickethack!</p>`;
       } else {
-        document.querySelector("#my-cart").innerHTML = `
-          <div id="empty-cart">
-            <p class="no-ticket">No tickets in your cart.</p>
-            <p>Why not plan a trip ?</p>
-          </div>`;
+        document.querySelector("#my-booking").innerHTML = `
+        <div id="booking-line">
+          <p class="no-booking">No booking yet</p>
+          <p>Why not plan a trip?</p>
+        </div>`;
       }
-      for (let i = 0; i < data.cartData.length; i++) {
-        document.querySelector("#cart-line-box").innerHTML += `
-          <div class="trip cart-line">
-            <p>
-              <span class="cart-departure">${data.cartData[i].departure}</span> >
-              <span class="cart-arrival">${data.cartData[i].arrival}</span>
-            </p>
-            <p class="cart-hour">${data.cartData[i].hour}</p>
-            <p class="hidden">${data.cartData[i]._id}</p>
-            <p><span class="cart-price">${data.cartData[i].price}</span>€</p>
-            <button id="btn-delete" type="button">X</button>
-          </div>`;
+      for (let i = 0; i < data.bookingData.length; i++) {
+        document.querySelector("#booking-line-box").innerHTML += `   
+        <div class="trip">
+          <p>
+            <span class="booking-departure">${data.bookingData[i].departure}</span> >
+            <span class="booking-arrival">${data.bookingData[i].arrival}</span>
+          </p>
+          <p class="booking-hour">${data.bookingData[i].hour}</p>
+          <p class="booking-price">${data.bookingData[i].price}€</p>
+          <p>Departure in <span class="count"></span> hours</p>
+        </div>
+        `;
+        const departureHour = +data.bookingData[i].hour.split(":")[0];
+        let actualDate = new Date();
+        actualDate = actualDate.getHours();
+        let timeLeft = departureHour - actualDate;
+        document.querySelectorAll(".count")[i].textContent = timeLeft;
       }
     });
 }

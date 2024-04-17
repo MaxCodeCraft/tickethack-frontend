@@ -46,18 +46,18 @@ h1 {
 h2 {
   font-size: 2rem;
   font-family: "Noto Sans KR";
+  text-align: center;
 }
 
 #text p {
   font-family: "Work Sans";
   font-size: 1rem;
+  text-align: center;
 }
 
 #header div {
   display: flex;
   gap: 15%;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 a {
@@ -83,7 +83,7 @@ a {
 }
 
 #search {
-  background-color: #f6f1f0;
+  background-color: #f2f3f3;
   width: 350px;
   border-radius: 10px;
   display: flex;
@@ -103,22 +103,16 @@ input {
 }
 
 #separator {
-  /* display: flex; */
   width: 315px;
   height: 1.5px;
   background-color: black;
   opacity: 0.3;
 }
 
-/* #departure {
-  border-bottom: 1px solid black;
-} */
-
 #input {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  /* margin-bottom: 4em; */
 }
 
 #btn-search {
@@ -131,16 +125,18 @@ input {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  /* margin-bottom: -2em; */
+}
+
+#btn-search:hover {
+  background-color: #286f5a;
 }
 
 #results {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   align-items: center;
-  background-color: #f6f1f0;
-  border-radius: 20px;
+  background-color: #f2f3f3;
+  border-radius: 10px;
   width: 350px;
   overflow: auto;
   padding: 1rem;
@@ -149,21 +145,17 @@ input {
 
 #results img {
   width: 10rem;
-  border-bottom: 2px solid #8dd194;
+  border-bottom: 2px solid #66a692;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   padding-top: 2rem;
 }
 
-/* #results p {
-  
-} */
-
 .trip {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(232, 213, 216);
+  background-color: #f6f1f0;
   border-radius: 10px;
   padding: 10px 20px;
   margin-bottom: 1rem;
@@ -182,14 +174,15 @@ input {
 
 button:hover {
   cursor: pointer;
+  background-color: #286f5a;
 }
 
 .price {
-  font-size: large;
+  font-weight: 700;
 }
 
 #cart-container {
-  background-color: #f6f1f0;
+  background-color: #f2f3f3;
   width: 100%;
   height: 100%;
   display: flex;
@@ -203,18 +196,24 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 10px;
   width: 70%;
-  /* height: 25%; */
 }
 
 #btn-delete {
   background-color: #66a692;
+  color: white;
+  font-weight: 700;
   border: none;
   text-align: center;
   text-decoration: none;
-  border-radius: 0.2rem;
-  padding: 1px;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+#btn-delete:hover {
+  background-color: #286f5a;
 }
 
 .cart {
@@ -226,12 +225,12 @@ button:hover {
 }
 
 #total {
-  background-color: rgb(31, 31, 196);
+  background-color: #051544;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   width: 100%;
   height: 4rem;
   padding: 2rem;
@@ -246,6 +245,10 @@ button:hover {
   padding: 5px 10px;
   text-align: center;
   border-radius: 5px;
+}
+
+#btn-purchase:hover {
+  background-color: #286f5a;
 }
 
 .text {
@@ -274,12 +277,20 @@ button:hover {
   align-items: center;
 }
 
+#booking-line-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .hidden {
   display: none;
 }
 
 #booking-container {
-  background-color: #f6f1f0;
+  background-color: #f2f3f3;
   width: 100%;
   height: 100%;
   display: flex;
@@ -294,29 +305,27 @@ button:hover {
   justify-content: center;
   justify-content: space-around;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 10px;
   width: 70%;
-  height: 25%;
+
   padding-right: 4rem;
   padding-left: 4rem;
 }
 
 .booking {
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
 .border {
   width: 15%;
-  height: 1%;
-  background-color: #9292e7;
-  margin-top: 1rem;
+  height: 1px;
+  background-color: #66a692;
+  margin: 1rem;
 }
 
 .enjoy {
-  color: #9292e7;
+  color: #66a692;
   padding-bottom: 1rem;
-  /* border-top: 1px solid #9292e7;
-  padding-top: 1rem; */
 }
 
 #booking-line {
@@ -327,4 +336,37 @@ button:hover {
 
 .no-booking {
   padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 320px) {
+  #search {
+    width: 300px;
+  }
+  #results {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #container {
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+  .trip {
+    font-size: 0.8rem;
+    width: 90%;
+    height: 50px;
+    gap: 10px;
+  }
+  #my-cart {
+    width: 350px;
+  }
+
+  #my-booking {
+    width: 350px;
+    padding: 0;
+  }
 }
