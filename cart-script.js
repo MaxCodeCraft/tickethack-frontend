@@ -1,5 +1,5 @@
 function showCartItems() {
-  fetch("https://tickethack-backend-lemon.vercel.app/carts/")
+  fetch("https://tickethack-backend-lemon.vercel.app/carts")
     .then((r) => r.json())
     .then((data) => {
       if (data.cartData.length != 0) {
@@ -73,7 +73,7 @@ function purchaseAll() {
   document
     .querySelector("#btn-purchase")
     .addEventListener("click", function () {
-      fetch("https://tickethack-backend-lemon.vercel.app/carts/")
+      fetch("https://tickethack-backend-lemon.vercel.app/carts")
         .then((r) => r.json())
         .then((data) => {
           for (let i = 0; i < data.cartData.length; i++) {
