@@ -95,8 +95,10 @@ function purchaseAll() {
             method: "DELETE",
           })
             .then((r) => r.json())
-            .then((data) => console.log(data));
-          document.location = "./bookings.html";
+            .then((data) => {
+              document.location = "./bookings.html";
+              console.log(data);
+            });
         });
     });
 }
