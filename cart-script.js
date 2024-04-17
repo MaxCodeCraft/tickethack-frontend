@@ -1,5 +1,5 @@
 function showCartItems() {
-  fetch("http://localhost:3000/carts/")
+  fetch("https://tickethack-backend-lemon.vercel.app/carts/")
     .then((r) => r.json())
     .then((data) => {
       if (data.cartData.length != 0) {
@@ -42,7 +42,7 @@ function showCartItems() {
           const deletedId = {
             id: data.cartData[j]._id,
           };
-          fetch("http://localhost:3000/carts/delete", {
+          fetch("https://tickethack-backend-lemon.vercel.app/carts/delete", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(deletedId),
@@ -73,7 +73,7 @@ function purchaseAll() {
   document
     .querySelector("#btn-purchase")
     .addEventListener("click", function () {
-      fetch("http://localhost:3000/carts/")
+      fetch("https://tickethack-backend-lemon.vercel.app/carts/")
         .then((r) => r.json())
         .then((data) => {
           for (let i = 0; i < data.cartData.length; i++) {
@@ -83,7 +83,7 @@ function purchaseAll() {
               hour: data.cartData[i].hour,
               price: data.cartData[i].price,
             };
-            fetch("http://localhost:3000/bookings/add", {
+            fetch("https://tickethack-backend-lemon.vercel.app/bookings/add", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(newBooking),
@@ -91,7 +91,7 @@ function purchaseAll() {
               .then((r) => r.json())
               .then((data) => console.log(data));
           }
-          fetch("http://localhost:3000/carts/deleteall", {
+          fetch("https://tickethack-backend-lemon.vercel.app/carts/deleteall", {
             method: "DELETE",
           })
             .then((r) => r.json())

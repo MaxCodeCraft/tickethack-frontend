@@ -16,7 +16,7 @@ function searchTrip(departure, arrival, date) {
     arrival: arrival,
     date: date,
   };
-  fetch("http://localhost:3000/trips/find", {
+  fetch("https://tickethack-backend-lemon.vercel.app/trips/find", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(searchRequest),
@@ -53,7 +53,7 @@ function searchTrip(departure, arrival, date) {
                 .querySelectorAll(".price")
                 [i].textContent.split("€")[0],
             };
-            fetch("http://localhost:3000/carts/add", {
+            fetch("https://tickethack-backend-lemon.vercel.app/carts/add", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(newTrip),

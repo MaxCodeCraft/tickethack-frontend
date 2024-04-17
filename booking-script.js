@@ -1,5 +1,5 @@
 function showBookings() {
-  fetch("http://localhost:3000/bookings/")
+  fetch("https://tickethack-backend-lemon.vercel.app/bookings/")
     .then((r) => r.json())
     .then((data) => {
       if (data.bookingData.length != 0) {
