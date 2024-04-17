@@ -188,7 +188,7 @@ button:hover {
   background-color: white;
   border-radius: 1rem;
   width: 70%;
-  height: 25%;
+  /* height: 25%; */
 }
 
 #btn-delete {
@@ -201,7 +201,7 @@ button:hover {
 }
 
 .cart {
-  padding-top: 1.5rem;
+  padding: 1rem 0;
 }
 
 .cart-line {
@@ -233,6 +233,32 @@ button:hover {
 
 .text {
   color: white;
+}
+
+#empty-cart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans";
+  padding: 3rem 0;
+}
+
+.no-ticket {
+  padding-bottom: 2rem;
+}
+
+#cart-line-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 #booking-container {
