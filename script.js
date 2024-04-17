@@ -59,7 +59,10 @@ function searchTrip(departure, arrival, date) {
               body: JSON.stringify(newTrip),
             })
               .then((response) => response.json())
-              .then((data) => console.log(data));
+              .then((data) => {
+                document.location = "./cart.html";
+                console.log(data);
+              });
           });
         }
       }
